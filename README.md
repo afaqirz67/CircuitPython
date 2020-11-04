@@ -2,7 +2,7 @@
 
 ## TABLE OF CONTENTS
 * [Led Blink](#Led-Blink)
-* [Servo Capacitive touch](#Servo-_-Capacitive-touch)
+* [Servo Capacitive touch](#Servo-Capacitive-touch)
 
 # Led Blink
 ## Description
