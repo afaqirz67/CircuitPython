@@ -1,7 +1,8 @@
 # CircuitPython
 
 ## TABLE OF CONTENTS
-* [Led Blink](#Led_Blink)'
+* [Led Blink](#Led_Blink)
+* [Servo - Capacitive touch](#Servo_-_Capacitive_touch)
 
 # Led Blink
 ## Description
@@ -24,5 +25,23 @@ while True:
     led.value = False
     time.sleep(0.5)
 ```
+
 ### Reflection 
 I learned a lot of new things by doing this assignment. First of all, pushing the work from local device to github account is just getting easier and smoother. I learned some basic knowledge of how the circuitpython looks. I learned how to code a metro express to make an led blink.
+
+
+# Servo - Capacitive touch
+## Description
+...
+
+## Image 
+
+
+
+### Code
+```C
+
+```
+
+### Reflection
+...
