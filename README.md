@@ -1,8 +1,8 @@
 # CircuitPython
 
 ## TABLE OF CONTENTS
-* [Led Blink](#Led_Blink)
-* [Servo - Capacitive touch](#Servo_-_Capacitive_touch)
+* [Led Blink](#Led-Blink)
+* [Servo_Capacitive touch](#Servo-_-Capacitive-touch)
 
 # Led Blink
 ## Description
