@@ -30,7 +30,7 @@ while True:
 I learned a lot of new things by doing this assignment. First of all, pushing the work from local device to github account is just getting easier and smoother. I learned some basic knowledge of how the circuitpython looks. I learned how to code a metro express to make an led blink.
 
 
-# Servo_Capacitive touch
+# Servo Capacitive touch
 ## Description
 ...
 
