@@ -32,16 +32,43 @@ I learned a lot of new things by doing this assignment. First of all, pushing th
 
 # Servo Capacitive touch
 ## Description
-...
+In this assignment we were supposed to wire up a servo with to other two wires coming out of the analog pins, so if you had to touch one of the wires with your finger, the servo would move in one direction, and if you were to touch the other wire coming out of another anolog pin, the servo would move in other direction. We had to use a Metro Express board and circuitpython to run the code to the servo. The only things beside a Metro Express needed was a servo, a couple wires, and a breadboard. The library I used beside the library for servo was the touchio library for the capacitive touch.    
 
 ## Image 
 
-
+ ![Tux, the Linux mascot](https://github.com/afaqirz67/CircuitPython---III/blob/main/images/Servo.png?raw=true)
 
 ### Code
 ```C
+import time
+import board
+import touchio
+import digitalio
+import pulseio
+import servo
+
+
+pwm = pulseio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50)
+my_servo = servo.Servo(pwm)
+my_servo.angle = 90
+
+touch_pad1 = board.A0
+touch1 = touchio.TouchIn(touch_pad1)
+
+touch_pad2 = board.A1
+touch2 = touchio.TouchIn(touch_pad2)
+
+while True:
+    if touch1.value:
+        print("touch1")
+        for angle in range(0, 180, 5):
+            my_servo.angle = angle
+    if touch2.value:
+        print("touch2")
+        for angle in range(180, 0, -5):
+            my_servo.angle = angle
 
 ```
 
 ### Reflection
-...
+I pretty much already knew the the actual concept of how servos work before, but the new thing I learned in this assignment is the capacitive touch. The word capacitive itself means sensing when something that conducts electricity, such as a fingertip, is in contact with the screen, which in this case here it would contact with the wires. Capacitive touch sensing is a way of human touch sensing, that requires little or no force to activate. It may be used to sense human touch through more than a quarter of an inch of plastic, wood, ceramic or other insulating material (not any kind of metal though), enabling the sensor to be completely visually concealed. I learned some basic knowledge about capacitive touch in [this](https://www.instructables.com/How-To-Use-Touch-Sensors-With-Arduino/#:~:text=Capacitive%20touch%20sensing%20is%20a%20way%20of%20human,enabling%20the%20sensor%20to%20be%20completely%20visually%20concealed.) website. 
