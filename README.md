@@ -47,8 +47,9 @@ import digitalio
 import pulseio
 import servo
 
-
+# create a PWMOut object on Pin A2.
 pwm = pulseio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50)
+# This creats a servo object.
 my_servo = servo.Servo(pwm)
 my_servo.angle = 90
 
@@ -61,10 +62,12 @@ touch2 = touchio.TouchIn(touch_pad2)
 while True:
     if touch1.value:
         print("touch1")
+        # it moves from 0 to 180, 5 steps at a time.
         for angle in range(0, 180, 5):
             my_servo.angle = angle
     if touch2.value:
         print("touch2")
+        # it moves from 180 to 0, 5 steps at a time.
         for angle in range(180, 0, -5):
             my_servo.angle = angle
 
