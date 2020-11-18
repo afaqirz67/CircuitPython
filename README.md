@@ -32,9 +32,10 @@ I learned a lot of new things by doing this assignment. First of all, pushing th
 
 # Servo Capacitive touch
 ## Description
-...
+  This is assignment we were supposed to have a 180° micro servo to slowly sweep back and forth between 0 and 180°. This would have usually been done with a potentiometer, but what that is done here, I have used to wires to use it instead of a potentiometer. This works totally the same as a potentiometer, and serves the same purpose. The only hardwares that was needed for this besides a micro servo and a microcontroller, was a couple of wires. Servo as always would be hooked up to 5v, ground, and the remaining wire to a digital pin. After that the two wires for the capacitive touch would be attached to two analog pins, and that would be all for the wiring. I also have an image to down below to make it more clear and show a visual of how it should look. After working on the circuit and uploding the code, by touching on wire the servo would sweep in one dirrection and by touching the other wire it would sweep the other direction.
 
 ## Image 
+![Tux, the Linux mascot](https://github.com/afaqirz67/CircuitPython---III/blob/master/images/Servo.png?raw=true)
 
 
 
@@ -70,4 +71,5 @@ while True:
 ```
 
 ### Reflection
-...
+Servo Capacitive touch was my first experience using capacitive touch, so first thing that I did was I looked up the definition for the capacitive. Capacitive means "denoting or relating to a touchscreen that works by sensing when something that conducts electricity, such as a fingertip, is in contact with the screen". Based on that, capacitive touch screen is a device display screen that relies on finger pressure for interaction. I learned each board has at least one pin that works as an input when you touch it! The capacitive touch is done completely in hardware, so no external resistors, capacitors or ICs required. Which is really nice! 
+
