@@ -3,6 +3,7 @@
 ## TABLE OF CONTENTS
 * [Led Blink](#Led-Blink)
 * [Servo Capacitive touch](#Servo-Capacitive-touch)
+* [CircuitPython LCD](#CircuitPython-LCD)
 
 # Led Blink
 ## Description
@@ -73,3 +74,18 @@ while True:
 ### Reflection
 Servo Capacitive touch was my first experience using capacitive touch, so first thing that I did was I looked up the definition for the capacitive. Capacitive means "denoting or relating to a touchscreen that works by sensing when something that conducts electricity, such as a fingertip, is in contact with the screen". Based on that, capacitive touch screen is a device display screen that relies on finger pressure for interaction. I learned each board has at least one pin that works as an input when you touch it! The capacitive touch is done completely in hardware, so no external resistors, capacitors or ICs required. Which is really nice! 
 
+# CircuitPython LCD
+## Description
+CircuitPython LCD is ...
+
+
+## Image
+
+
+## Code
+```C
+
+```
+
+
+### Reflection 
