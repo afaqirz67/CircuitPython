@@ -76,11 +76,11 @@ Servo Capacitive touch was my first experience using capacitive touch, so first 
 
 # CircuitPython LCD
 ## Description
-CircuitPython LCD is ...
+The Circuit Python LCD would count in any directions up or down. Just like the Capacitive Touch Servo, which we used wires instead of a potentiometer, we have used wires for the CircuitPython LCD instead a button as well. The LCD would count up and down whenever the wires are pressed...
 
 
 ## Image
-
+![Tux, the Linux mascot](https://github.com/afaqirz67/CircuitPython---III/blob/master/images/CircuitPython%20LCD-img.png?raw=true)
 
 ## Code
 ```C
