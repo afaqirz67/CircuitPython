@@ -92,8 +92,8 @@ The Circuit Python LCD would count in any directions up or down. Just like the C
 The Metro only count once per touch. If I touch and hold the count wire, it would only count as one touch. The LCD would count whenever the wires are pressed. You can toggle
 whether your Metro is counting up or down when pressing one wire, and you can count using the other wire. One important thing that I want to point out here is the libraries I
 used in my code. I used 3 libraries. [i2c_device.mpy](https://github.com/DoctorShields/CircuitPythonRepo/blob/master/micropython/adafruit_bus_device_mpy/i2c_device.mpy) which I
-placed in a separate folder called "adafruit_bus_device" in lib folder on my metro. Also [i2c_pcf8574_interface.mpy]
-(https://github.com/DoctorShields/CircuitPythonRepo/blob/master/micropython/lcd_mpy/i2c_pcf8574_interface.mpy) and [lcd.mpy]
-(https://github.com/DoctorShields/CircuitPythonRepo/blob/master/micropython/lcd_mpy/lcd.mpy), which I placed in another seperate folder called lcd in my lib folder on
+placed in a separate folder called "adafruit_bus_device" in lib folder on my metro. Also 
+[i2c_pcf8574_interface.mpy](https://github.com/DoctorShields/CircuitPythonRepo/blob/master/micropython/lcd_mpy/i2c_pcf8574_interface.mpy) and 
+[lcd.mpy](https://github.com/DoctorShields/CircuitPythonRepo/blob/master/micropython/lcd_mpy/lcd.mpy), which I placed in another seperate folder called lcd in my lib folder on
 my metero.
 
