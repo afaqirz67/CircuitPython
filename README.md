@@ -13,7 +13,7 @@
 ## Image
  ![Tux, the Linux mascot](https://github.com/afaqirz67/CircuitPython---III/blob/main/images/Led-Blink.jpg?raw=true)
 
-### Code
+## Code
 ```C
 import board
 import digitalio
@@ -29,7 +29,7 @@ while True:
     time.sleep(0.5)
 ```
 
-### Reflection 
+## Reflection 
 I learned a lot of new things by doing this assignment. First of all, pushing the work from local device to github account is just getting easier and smoother. I learned some basic knowledge of how the circuitpython looks. I learned how to code a metro express to make an led blink.
 
 
@@ -42,7 +42,7 @@ I learned a lot of new things by doing this assignment. First of all, pushing th
 
 
 
-### Code
+## Code
 ```C
 import time
 import board
@@ -145,7 +145,7 @@ while True:
 ```
 
 
-### Reflection
+## Reflection
 The Metro only count once per touch. If I touch and hold the count wire, it would only count as one touch. The LCD would count whenever the wires are pressed. You can toggle
 whether your Metro is counting up or down when pressing one wire, and you can count using the other wire. One important thing that I want to point out here is the libraries I
 used in my code. I used 3 libraries. [i2c_device.mpy](https://github.com/DoctorShields/CircuitPythonRepo/blob/master/micropython/adafruit_bus_device_mpy/i2c_device.mpy) which I
@@ -156,7 +156,7 @@ my metero.
 
 
 # CircuitPython Photointerrupters
-Description
+##Description
 
 ## Image
 
