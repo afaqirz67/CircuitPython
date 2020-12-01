@@ -157,9 +157,17 @@ my metero.
 
 # CircuitPython Photointerrupters
 ## Description
+A photo interrupter is a devise that is made up of a infrared led and a photo transistor with a gap between the two of them, When something is placed between the gap the light 
+is cut and the current flow through the photo transistor is reduced or stopped. This is assignment had us to Wire up a photointerrupter and have it keep track of how many times 
+it has been interrupted. The program should output the count using a full sentence, and output the sentence every 4 seconds without using the syntax sleep().
 
 ## Image
+![Tux, the Linux mascot](https://github.com/afaqirz67/CircuitPython---III/blob/master/images/CircuitPython%20photointerrupter.png?raw=true)
 
 ## Code
 
+
 ## Reflection
+I mostly used the codes I used for the last assignment which was the CircuitPython LCD, so all the codes for the LCD were the same. The only struggle I had in this assignment 
+was the code part which required the output statement to appear after every 4 seconds. I went through [this](https://docs.python.org/3/library/time.html) website and found out 
+that time.time was what would fit the best in this condition.
