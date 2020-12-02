@@ -166,35 +166,40 @@ it has been interrupted. The program should output the count using a full senten
 
 ## Code
 ```C
+# libraries
 from digitalio import DigitalInOut, Direction, Pull
 import board
 import time
-
 from lcd.lcd import LCD
 from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+
+
 # some LCDs are 0x3f... some are 0x27.
 lcd = LCD(I2CPCF8574Interface(0x3f), num_rows=2, num_cols=16)
 
 
+
 count = 0
 
-interrupt = DigitalInOut(board.D13)
-interrupt.direction = Direction.INPUT
-interrupt.pull = Pull.UP
+interrupt = DigitalInOut(board.D13) # sets the digital input pin
+interrupt.direction = Direction.INPUT # sets the direction as an input
+interrupt.pull = Pull.UP 
+# defines the pull of the digital input pin as up so when the
+# input line isn't being run the pull-up values the state of 
+# the line high so it reads as true
 
 lastRefresh = 0
 previous = False
 
 while True:
-    now = time.time()
-    if now - lastRefresh > 4:
+    now = time.time() # now = time in seconds since epoch 
+    if now - lastRefresh > 4: 
         lastRefresh = now
         lcd.clear()
         lcd.print("The number of interrupts is: " + str(count))
 
-    if interrupt.value and not previous:
+    if interrupt.value and not previous: # only takes the current value of the interruption
         count = count + 1
-        #lastRefresh = 0
     previous = interrupt.value
     
   ```
