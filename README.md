@@ -165,7 +165,40 @@ it has been interrupted. The program should output the count using a full senten
 ![Tux, the Linux mascot](https://github.com/afaqirz67/CircuitPython---III/blob/master/images/CircuitPython%20photointerrupter.png?raw=true)
 
 ## Code
+```C
+from digitalio import DigitalInOut, Direction, Pull
+import board
+import time
 
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+# some LCDs are 0x3f... some are 0x27.
+lcd = LCD(I2CPCF8574Interface(0x3f), num_rows=2, num_cols=16)
+
+
+count = 0
+
+interrupt = DigitalInOut(board.D13)
+interrupt.direction = Direction.INPUT
+interrupt.pull = Pull.UP
+
+lastRefresh = 0
+previous = False
+
+while True:
+    now = time.time()
+    if now - lastRefresh > 4:
+        lastRefresh = now
+        lcd.clear()
+        lcd.print("The number of interrupts is: " + str(count))
+
+    if interrupt.value and not previous:
+        count = count + 1
+        #lastRefresh = 0
+    previous = interrupt.value
+    
+  ```
+    
 
 ## Reflection
 I mostly used the codes I used for the last assignment which was the CircuitPython LCD, so all the codes for the LCD were the same. The only struggle I had in this assignment 
