@@ -225,7 +225,7 @@ Right when the distance is 35, it should be a solid blue. For a better picture, 
 
 
 ## Image
-
+![Tux, the Linux mascot](https://github.com/afaqirz67/CircuitPython---III/blob/master/images/CircuitPython%20Distance%20Sensor%20%20-%20circuit.png?raw=true)
 ## Code 
 ```C
 # Libraries
