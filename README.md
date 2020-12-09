@@ -220,6 +220,7 @@ This assignment we had to get a distance sensor calculating the distance and at 
 according to what the calculated distance is. For example, in this case we had to have the LED be red if the distance is 5, and fade out as the distance is getting bigger. Once
 it reaches close to 20, it starts going to blue and once it's 20, it should be a solid green. As it crosses that point at gets closer to 35. It should go from a green to a blue. 
 Right when the distance is 35, it should be a solid blue. For a better picture, take a look at the visuale below.
+
 ![Tux, the Linux mascot](https://github.com/afaqirz67/CircuitPython---III/blob/master/images/color%20spectrum.png?raw=true)
 
 
