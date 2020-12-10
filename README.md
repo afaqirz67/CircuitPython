@@ -217,9 +217,10 @@ that time.time was what would fit the best in this condition.
 # CircuitPython Distance Sensor
 ## Description
 This assignment we had to get a distance sensor calculating the distance and at the same time, having the neopixel on the Metro Express board LED express specific colors 
-according to what the calculated distance is. For example, in this case we had to have the LED be red if the distance is 5, and fade out as the distance is getting bigger. Once
-it reaches close to 20, it starts going to blue and once it's 20, it should be a solid green. As it crosses that point at gets closer to 35. It should go from a green to a blue. 
-Right when the distance is 35, it should be a solid blue. For a better picture, take a look at the visuale below.
+according to what the calculated distance is. And there is an HC-SR04 distance sensor used to calculate the distance. For example, in this case we had to have the LED be 
+red if the distance is 5, and fade out as the distance is getting bigger. Onceit reaches close to 20, it starts going to blue and once it's 20, it should be a solid 
+green. As it crosses that point at gets closer to 35. It should go from a green to a blue. Right when the distance is 35, it should be a solid blue. For a better 
+picture, take a look at the visuale below. 
 
 ![Tux, the Linux mascot](https://github.com/afaqirz67/CircuitPython---III/blob/master/images/color%20spectrum.png?raw=true)
 
@@ -259,7 +260,7 @@ while True:
         print((distance,))
     except RuntimeError: # handles errors occuring while the code is being executed
         print("Retrying!")
-        continue
+        continue # this keeps the program running, without this command any runtime errors can cause the program to stop functioning.
 
 
     pixels.fill((color(distance,redTarget,colorRange),
@@ -273,4 +274,8 @@ while True:
 ```
 
 ## Reflection
+This assignment was a little challenging, specially having the color of the onboard neopixel on the Metro Express correspond to the distance. I used this website to get
+some information about the defining the neopixel. 
 [this](https://github.com/adafruit/Adafruit_CircuitPython_HCSR04/blob/master/adafruit_hcsr04.py)
+is the library I used in this assignment. I learned that an HC-SR04 measures the distance to an object roughly 10 times per second. I did not use an LCD screen to see
+the distance measure by that, istead I just used my serial moniter for observating the distance. 
