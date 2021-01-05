@@ -6,6 +6,7 @@
 * [CircuitPython LCD](#CircuitPython-LCD)
 * [CircuitPython Photointerrupters](#CircuitPython-Photointerrupters)
 * [CircuitPython Distance Sensor](#CircuitPython-Distance-Sensor)
+* [Classes, Objects, and Modules](#Classes,-Objects,-and-Modules)
 
 
 # Led Blink
@@ -279,3 +280,19 @@ some information about the defining the neopixel.
 [this](https://github.com/adafruit/Adafruit_CircuitPython_HCSR04/blob/master/adafruit_hcsr04.py)
 is the library I used in this assignment. I learned that an HC-SR04 measures the distance to an object roughly 10 times per second. I did not use an LCD screen to see
 the distance measure by that, istead I just used my serial moniter for observating the distance. 
+
+
+
+# Classes, Objects, and Modules
+## Description
+
+
+
+## Image 
+![Tux, the Linux mascot](https://github.com/afaqirz67/CircuitPython---III/blob/master/images/Classes,%20Objects,%20and%20Modules.png?raw=true)
+## Code
+```C
+
+```
+
+## Reflection
