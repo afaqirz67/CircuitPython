@@ -285,6 +285,12 @@ the distance measure by that, istead I just used my serial moniter for observati
 
 # Classes, Objects, and Modules
 ## Description
+This assignment is basically creating your own modules and making your own life easier. Modules really great and usefull, because with modules, you can creat classes. Using 
+modules, classes, and objects, I was able to write a library for the code below to make it work. Without the RGB library the following code wouldn't have been able to be 
+recognized by the program. A class is a code template for creating objects. Objects have member variables and have behaviour associated with them. An object is created using the 
+constructor of the class. You can find more information about how classes and objects in Python work 
+[here](https://www.hackerearth.com/practice/python/object-oriented-programming/classes-and-objects-i/tutorial/).
+
 
 
 
@@ -292,7 +298,103 @@ the distance measure by that, istead I just used my serial moniter for observati
 ![Tux, the Linux mascot](https://github.com/afaqirz67/CircuitPython---III/blob/master/images/Classes,%20Objects,%20and%20Modules.png?raw=true)
 ## Code
 ```C
+import time
+import board
+from rgb import RGB   # import the RGB class from the rgb module
 
+r1 = board.D3
+g1 = board.D4
+b1 = board.D5
+r2 = board.D8
+g2 = board.D9
+b2 = board.D10
+
+myRGB1 = RGB(r1,g1,b1)   # create a new RGB object, using pins 3, 4, and 5
+myRGB2 = RGB(r2,g2,b2)   # create a new RGB object, using pins 8, 9, and 10
+
+rate1 = 2.0
+rate2 = 0.5
+
+myRGB1.red()          # Glow red
+myRGB2.green()        # Glow green
+time.sleep(1)
+myRGB1.blue()         # Glow blue
+myRGB2.cyan()         # Glow... you get it...
+time.sleep(1)
+myRGB1.magenta()      # Did you know magenta isn't in the rainbow?
+myRGB2.yellow()       # Like you learned in first grade, red and green make... huh?
+time.sleep(1)
+myRGB1.rainbow(rate1)
+myRGB1.rainbow(rate2)
+# extra spicy (optional) part
+```
+## RGB Library
+```C
+import digitalio
+import time
+
+class RGB:
+
+    def __init__(self, r, g, b):
+        self.r = digitalio.DigitalInOut(r)
+        self.r.direction = digitalio.Direction.OUTPUT
+        self.r.drive_mode = digitalio.DriveMode.OPEN_DRAIN
+
+        self.g = digitalio.DigitalInOut(g)
+        self.g.direction = digitalio.Direction.OUTPUT
+        self.g.drive_mode = digitalio.DriveMode.OPEN_DRAIN
+
+        self.b = digitalio.DigitalInOut(b)
+        self.b.direction = digitalio.Direction.OUTPUT
+        self.b.drive_mode = digitalio.DriveMode.OPEN_DRAIN
+
+
+    def red(self):
+        self.r.value = False
+        self.g.value = True
+        self.b.value = True
+
+    def green(self):
+        self.r.value = True
+        self.g.value = False
+        self.b.value = True
+
+    def blue(self):
+        self.r.value = True
+        self.g.value = True
+        self.b.value = False
+
+    def yellow(self):
+        self.r.value = False
+        self.g.value = False
+        self.b.value = True
+
+    def magenta(self):
+        self.r.value = False
+        self.g.value = True
+        self.b.value = False
+
+    def cyan(self):
+        self.r.value = True
+        self.g.value = False
+        self.b.value = False
+
+
+    def rainbow(self, rate: float):
+
+        self.yellow()
+        time.sleep(1.0/rate)
+        self.red()
+        time.sleep(1.0/rate)
+        self.green()
+        time.sleep(1.0/rate)
+        self.blue()
+        time.sleep(1.0/rate)
+        self.cyan()
+        time.sleep(1.0/rate)
+        self.magenta()
+        time.sleep(1.0/rate)
 ```
 
 ## Reflection
+
