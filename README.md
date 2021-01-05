@@ -6,7 +6,7 @@
 * [CircuitPython LCD](#CircuitPython-LCD)
 * [CircuitPython Photointerrupters](#CircuitPython-Photointerrupters)
 * [CircuitPython Distance Sensor](#CircuitPython-Distance-Sensor)
-* [Classes, Objects, and Modules](#Classes,-Objects,-and-Modules)
+* [Classes Objects and Modules](#Classes-Objects-and-Modules)
 
 
 # Led Blink
@@ -283,7 +283,7 @@ the distance measure by that, istead I just used my serial moniter for observati
 
 
 
-# Classes, Objects, and Modules
+# Classes Objects and Modules
 ## Description
 This assignment is basically creating your own modules and making your own life easier. Modules really great and usefull, because with modules, you can creat classes. Using 
 modules, classes, and objects, I was able to write a library for the code below to make it work. Without the RGB library the following code wouldn't have been able to be 
