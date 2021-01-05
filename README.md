@@ -289,7 +289,8 @@ This assignment is basically creating your own modules and making your own life 
 modules, classes, and objects, I was able to write a library for the code below to make it work. Without the RGB library the following code wouldn't have been able to be 
 recognized by the program. A class is a code template for creating objects. Objects have member variables and have behaviour associated with them. An object is created using the 
 constructor of the class. You can find more information about how classes and objects in Python work 
-[here](https://www.hackerearth.com/practice/python/object-oriented-programming/classes-and-objects-i/tutorial/).
+[here](https://www.hackerearth.com/practice/python/object-oriented-programming/classes-and-objects-i/tutorial/). For the circuit, I have used 2 anode RGB LEDs, 6 resistors, with
+a couple wires, and a metro express board with a bread board.
 
 
 
@@ -330,15 +331,21 @@ myRGB1.rainbow(rate2)
 ```
 ## RGB Library
 ```C
+# libraries...
 import digitalio
 import time
 
-class RGB:
+class RGB: # creating a class
 
     def __init__(self, r, g, b):
-        self.r = digitalio.DigitalInOut(r)
+        self.r = digitalio.DigitalInOut(r) # setting the direction into output
         self.r.direction = digitalio.Direction.OUTPUT
-        self.r.drive_mode = digitalio.DriveMode.OPEN_DRAIN
+
+        #The operating of digital output is done in
+        # two modes one is a push-pull mode and another one is an open-drain mode.
+
+        self.r.drive_mode = digitalio.DriveMode.OPEN_DRAIN  # pulls the pin voltage to  ground
+
 
         self.g = digitalio.DigitalInOut(g)
         self.g.direction = digitalio.Direction.OUTPUT
@@ -349,38 +356,38 @@ class RGB:
         self.b.drive_mode = digitalio.DriveMode.OPEN_DRAIN
 
 
-    def red(self):
+    def red(self): # Glow red
         self.r.value = False
         self.g.value = True
         self.b.value = True
 
-    def green(self):
+    def green(self): # Glow green
         self.r.value = True
         self.g.value = False
         self.b.value = True
 
-    def blue(self):
+    def blue(self): # Glow blue
         self.r.value = True
         self.g.value = True
         self.b.value = False
 
-    def yellow(self):
-        self.r.value = False
+    def yellow(self): # Glow yellow
+        self.r.value = False        # Red and green make yellow
         self.g.value = False
         self.b.value = True
 
-    def magenta(self):
-        self.r.value = False
+    def magenta(self): # Glow magenta
+        self.r.value = False       # Blue and red make magenta
         self.g.value = True
         self.b.value = False
 
-    def cyan(self):
-        self.r.value = True
+    def cyan(self): # Glow cyan
+        self.r.value = True        # Green and blue make cyan
         self.g.value = False
         self.b.value = False
 
 
-    def rainbow(self, rate: float):
+    def rainbow(self, rate: float): # making the colors of the rainbow
 
         self.yellow()
         time.sleep(1.0/rate)
@@ -394,7 +401,14 @@ class RGB:
         time.sleep(1.0/rate)
         self.magenta()
         time.sleep(1.0/rate)
+
+
 ```
 
 ## Reflection
-
+Writing a library is still code. It's nothing far more than a simple code with just some differences. Instead of importing a library, you are creating the library using classes,
+objects, and modules. Wiring the circuit just needs a couple things. For wiring RGB LEDs correctly, One leg goes to 5 V and you'll need three resistors per LED, one for each of 
+the other legs. And all the other legs are connected to the specific digital pins on the board with resisters in between. For the coding part, I used 
+[this](https://pythonexamples.org/python-class-create-object/) website to get a little extra help. Some points that need to be considered with the code is, all RGB methods 
+include the "self" argument. self is how objects refer to themselves, and who to run and perfrom the action on. There are 2 things inside a class. The class name needs to be 
+capitalized. Thing things that class contain inside it, are variables and then methods, which are things that in this case, all RGB instances will know how to do. 
