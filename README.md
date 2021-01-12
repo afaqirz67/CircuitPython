@@ -422,7 +422,7 @@ capitalized. Thing things that class contain inside it, are variables and then m
 
 
 ## Circuit
-(https://github.com/afaqirz67/CircuitPython/blob/master/images/fancy%20led.png?raw=true)
+![Tux, the Linux mascot](https://github.com/afaqirz67/CircuitPython/blob/master/images/fancy%20led.png?raw=true)
 
 ## Code
 ```C
