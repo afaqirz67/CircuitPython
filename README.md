@@ -7,6 +7,7 @@
 * [CircuitPython Photointerrupters](#CircuitPython-Photointerrupters)
 * [CircuitPython Distance Sensor](#CircuitPython-Distance-Sensor)
 * [Classes Objects and Modules](#Classes-Objects-and-Modules)
+* [Fancy LED](#Fancy-LED)
 
 
 # Led Blink
@@ -412,3 +413,255 @@ the other legs. And all the other legs are connected to the specific digital pin
 [this](https://pythonexamples.org/python-class-create-object/) website to get a little extra help. Some points that need to be considered with the code is, all RGB methods 
 include the "self" argument. self is how objects refer to themselves, and who to run and perfrom the action on. There are 2 things inside a class. The class name needs to be 
 capitalized. Thing things that class contain inside it, are variables and then methods, which are things that in this case, all RGB instances will know how to do. 
+
+
+
+# Fancy LED
+## Description
+...
+
+
+## Circuit
+(https://github.com/afaqirz67/CircuitPython/blob/master/images/fancy%20led.png?raw=true)
+
+## Code
+```C
+from fancyLed import FancyLED
+import board
+
+fancy1 = FancyLED(board.D1, board.D2, board.D3)
+fancy2 = FancyLED(board.D4, board.D5, board.D7)
+
+while True:
+    fancy1.alternate()
+    fancy2.blink()
+    fancy1.chase()
+    fancy2.sparkle()
+  
+```
+## Fancy LED Library
+```C
+# Libraries
+import digitalio
+import time
+import board
+
+class FancyLED: # FancyLED class is created
+
+    # __init__ is short for initialization. It is a constructor
+    # which gets called when you make an instance of the class
+    # and it is not necessary. But usually it our practice to
+    # write init method for setting default state of the object.
+
+
+    # The self parameter refers to the instance of the object
+    def __init__(self, led1, led2, led3):
+
+
+        self.l = digitalio.DigitalInOut(led1)
+        self.l.direction = digitalio.Direction.OUTPUT
+
+        self.l2 = digitalio.DigitalInOut(led2)
+        self.l2.direction = digitalio.Direction.OUTPUT
+
+        self.l3 = digitalio.DigitalInOut(led3)
+        self.l3.direction = digitalio.Direction.OUTPUT
+
+
+
+
+
+    # defining methods ...
+
+    def alternate(self):
+
+        t = 0.3 # sets the time value as a vairable
+        self.l.value = True
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = True
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = True
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = True
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = True
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = True
+        time.sleep(t)
+        self.l.value = True
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = True
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = True
+        self.l3.value = False
+        time.sleep(t)
+
+
+        self.l.value = True
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = True
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = True
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = True
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = True
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = True
+        time.sleep(t)
+        self.l.value = True
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = True
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = True
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = True
+        time.sleep(t)
+        self.l3.value = False
+
+
+    def blink(self):
+        t = 0.3
+        self.l.value = True
+        self.l2.value = True
+        self.l3.value = True
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+
+        self.l.value = True
+        self.l2.value = True
+        self.l3.value = True
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+
+        self.l.value = True
+        self.l3.value = True
+        self.l3.value = True
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+
+    def chase(self):
+        t = 0.3
+        self.l.value = True
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = True
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = True
+        time.sleep(t)
+
+
+
+        self.l.value = False
+        self.l2.value = True
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = True
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = True
+        self.l3.value = False
+        time.sleep(t)
+
+
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = True
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = True
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = True
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+
+
+        self.l.value = False
+        self.l2.value = True
+        self.l3.value = False
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = True
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+
+
+    def sparkle(self):
+        t = 3
+        self.l.value = True
+        self.l2.value = True
+        self.l3.value = True
+        time.sleep(t)
+        self.l.value = False
+        self.l2.value = False
+        self.l3.value = False
+        time.sleep(t)
+
+
+
+
+
+
+```
+
+## Reflection
+    
