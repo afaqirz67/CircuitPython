@@ -418,7 +418,9 @@ capitalized. Thing things that class contain inside it, are variables and then m
 
 # Fancy LED
 ## Description
-...
+This assignment is basically the same concept of making your own modules as the previous assignment. In order for the following code to function without errors, the FancyLED 
+library should be created to correspond with the code and make it work. Instead of rgb LEDs, a total of 6 regular LEDs are used. The fancy LED library enables the code to 
+function correctly. It helps it preform the 4 methods: alternate, blink, chase, and sparkle that are called on the code.
 
 
 ## Circuit
@@ -664,4 +666,7 @@ class FancyLED: # FancyLED class is created
 ```
 
 ## Reflection
-    
+The code above is a simple code, but it hides large chuncks of code in the background. Those lines of codes are the libraries that make everything possible for the actual code.
+It enables the lines readable for the programe. For that to happen, inside libraries, classes are created. In fancy LED library class, there are a total of three board 
+pins. Three pins are attached to the to the LEDs. There are a total of 6 LEDs used with 6 resistors to resist current. The circuit is shown in above 
+[images](https://github.com/afaqirz67/CircuitPython/blob/master/images/fancy%20led.png?raw=true).
